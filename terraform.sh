@@ -1,0 +1,1 @@
+terraform output user_encrypted_passwords | jq fromjson | jq -r '."demo.user".password' | base64 --decode | gpg --decrypt
